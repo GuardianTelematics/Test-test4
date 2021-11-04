@@ -53,9 +53,8 @@ pipeline {
             }
         }
 
-        stage('build and push to docker registry'){            
-            def dockerfile_exists = fileExists { file 'dockerfile' }               
-            when { equals expected: true, actual: dockerfile_exists }
+        stage('build and push to docker registry'){                         
+            when { expression { return fileExists ('dockerfile') } }                          
             steps{
                 def repo =  (repoNameTag.toLowerCase()).replace ('-', '_')
                 sh(script:"docker build . -t guardian-telematics/${repo}") //build image
@@ -76,8 +75,7 @@ pipeline {
         }
 
         // stage('run docker compose'){
-        //     def dockerCompose_exists = fileExists { file 'docker-compose.yml' }
-        //     when { equals expected: true, actual: dockerCompose_exists }
+        //     when { expression { return fileExists ('docker-compose.yml') } }  
         //     steps{
         //         def tag = repoNameTag.toLowerCase()
         //         sh(script:"docker stack deploy --with-registry-auth -c docker-compose.yml ${tag}") 
