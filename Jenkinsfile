@@ -23,7 +23,7 @@ pipeline {
     stage('Some step') {
       steps {
         sh "echo $ref"
-        echo 'hiiiiiiiiiiiiiiiiiiii'
+        echo 'hiiiiiiiiiiiiiiiiii'
       }
     }
   }
