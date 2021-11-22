@@ -23,7 +23,7 @@ pipeline {
         sh "echo $ref"
         
         echo 'hiiiiiiiii'
-        echo "giattiiiii"
+        echo "gitiiiii"
       }
     }
   }
