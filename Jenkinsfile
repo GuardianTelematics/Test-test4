@@ -22,7 +22,7 @@ pipeline {
       steps {
         sh "echo $ref"
         
-        echo 'hiiiiiiiiiiiii'
+        echo 'hiiiiiiiiiii'
       }
     }
   }
