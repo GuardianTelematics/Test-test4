@@ -12,8 +12,8 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-    //  regexpFilterText: '$ref',
-    //  regexpFilterExpression: 'refs/heads/' + "${env.BRANCH_NAME}"
+     regexpFilterText: '$ref',
+     regexpFilterExpression: 'refs/heads/' + "${env.BRANCH_NAME}"
 
     )
   }
