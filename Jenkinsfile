@@ -3,7 +3,8 @@ pipeline {
   triggers {
     GenericTrigger(
      genericVariables: [
-      [key: 'ref', value: '$.ref']
+      [key: 'ref', value: '$.ref'],
+      [key: 'everything', value: '$.']
      ],
      causeString: 'Triggered on $ref',
      token: 'abc123',
@@ -22,6 +23,7 @@ pipeline {
       steps {
         
         echo "${ref}"
+        echo "${everything}"
         echo 'hiiiiiiiii'
         echo "gitiiiii"
       }
