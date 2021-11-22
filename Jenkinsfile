@@ -30,7 +30,7 @@ pipeline {
         echo "${params.action}"
           echo "${params.state}"
             echo "${params.merged}"
-        echo 'hiiiiiiiii'
+        echo 'hiiiiiii'
         echo "gitiii"
       }
     }
