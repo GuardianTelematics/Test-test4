@@ -1,10 +1,14 @@
 pipeline {
   agent any
-  parameters { string(name: 'payload', defaultValue: 'default_value_for_payload', description: '') }
+  parameters { 
+    string(name: 'action', value:'$.action', defaultValue: 'default_value_for_action', description: '')
+    string(name: 'state',value: '$.pull_request.state', defaultValue: 'default_value_for_state', description: '')
+    string(name: 'merged',value: '$.merged_at', defaultValue: 'default_value_for_merged', description: '')
+     }
   // triggers {
   //   GenericTrigger(
   //    genericVariables: [
-  //     [key: 'ref', value: '$.ref'],
+  //     [key: 'pull_request', value: '$.pull_request'],
      
   //    ],
   //    causeString: 'Triggered on $ref',
@@ -23,8 +27,9 @@ pipeline {
     stage('Some step') {
       steps {
         // echo "${everything}"
-        echo "${params.payload}"
-        
+        echo "${params.action}"
+          echo "${params.state}"
+            echo "${params.merged}"
         echo 'hiiiiiiiii'
         echo "gitiii"
       }
