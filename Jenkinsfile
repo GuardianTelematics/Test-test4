@@ -26,7 +26,7 @@ pipeline {
         echo "${params.payload}"
         
         echo 'hiiiiiiiii'
-        echo "gitiiiii"
+        echo "gitiii"
       }
     }
   }
