@@ -22,7 +22,8 @@ pipeline {
   stages {
     stage('Some step') {
       steps {
-        sh "echo $ref"
+        echo "${ref}"
+        
         echo 'hiiiiiiiiiiiii'
       }
     }
