@@ -15,14 +15,15 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-
+     regexpFilterText: '$ref',
+     regexpFilterExpression: 'refs/heads/' + BRANCH_NAME
     
     )
   }
   stages {
     stage('Some step') {
       steps {
-        echo "${ref}"
+        sh "echo $ref"
         
         echo 'hiiiiiiiiiiiii'
       }
