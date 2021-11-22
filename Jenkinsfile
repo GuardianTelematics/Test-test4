@@ -4,7 +4,6 @@ pipeline {
     GenericTrigger(
      genericVariables: [
       [key: 'ref', value: '$.ref'],
-      [key: 'everything', value: '$.']
      ],
      causeString: 'Triggered on $ref',
      token: 'abc123',
@@ -13,8 +12,8 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-     regexpFilterText: '$ref',
-     regexpFilterExpression: 'refs/heads/' + "${env.BRANCH_NAME}"
+    //  regexpFilterText: '$ref',
+    //  regexpFilterExpression: 'refs/heads/' + "${env.BRANCH_NAME}"
 
     )
   }
@@ -23,7 +22,7 @@ pipeline {
       steps {
         
         echo "${ref}"
-        echo "${everything}"
+        
         echo 'hiiiiiiiii'
         echo "gitiiiii"
       }
