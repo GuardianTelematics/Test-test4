@@ -1,9 +1,9 @@
 pipeline {
   agent any
   parameters { 
-    string(name: 'action', value:'$.action', defaultValue: 'default_value_for_action', description: '')
-    string(name: 'state',value: '$.pull_request.state', defaultValue: 'default_value_for_state', description: '')
-    string(name: 'merged',value: '$.merged_at', defaultValue: 'default_value_for_merged', description: '')
+    string(name: 'action', value: '$.action', defaultValue: 'default_value_for_action', description: '')
+    string(name: 'state', value: '$.pull_request.state', defaultValue: 'default_value_for_state', description: '')
+    string(name: 'merged', value: '$.merged_at', defaultValue: 'default_value_for_merged', description: '')
      }
   // triggers {
   //   GenericTrigger(
