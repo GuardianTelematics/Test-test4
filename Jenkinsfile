@@ -8,7 +8,7 @@ pipeline {
   triggers {
     GenericTrigger(
      genericVariables: [
-      [key: 'ref', value: '$.ref'],
+      [key: 'action', value: '$.action'],
       [
       key: 'everything',
       value: '$',
@@ -24,8 +24,8 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-     regexpFilterText: '$ref',
-     regexpFilterExpression: 'refs/heads/' + "${env.BRANCH_NAME}"
+     regexpFilterText: '$action',
+     regexpFilterExpression: 'opened'
 
     )
   }
