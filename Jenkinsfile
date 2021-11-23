@@ -30,6 +30,13 @@ pipeline {
         }  
       }
      
+     token: 'abc123',
+     tokenCredentialId: '',
+     printContributedVariables: true,
+     printPostContent: true,
+
+     silentResponse: false,
+     
     )
   }
 
