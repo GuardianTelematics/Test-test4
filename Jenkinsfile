@@ -32,7 +32,7 @@ pipeline {
 
      silentResponse: false,
      regexpFilterText: '$x_github_event',
-     regexpFilterExpression: 'push'
+     regexpFilterExpression: "'push' | 'pull_request'"
     )
   }
 
