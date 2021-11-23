@@ -20,7 +20,11 @@ pipeline {
      ]
      ],
      causeString: 'Triggered on $pr_opened pull request',
-     token: 'abc123',
+     withCredentials(
+      [ string (credentialsId: 'genericWebhookToken', variable: 'TOKEN'
+      )]
+     ){ 
+     token: TOKEN,
      tokenCredentialId: '',
     //  printContributedVariables: true,
     //  printPostContent: true,
