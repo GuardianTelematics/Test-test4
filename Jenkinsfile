@@ -50,7 +50,7 @@ pipeline {
         echo "${x_github_event}"
         echo "event-----"
             echo "${params.pr_state}"
-        echo 'hiiiiiii'
+        echo 'hiiiii'
         echo "gitiii"
       }
     }
