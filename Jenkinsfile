@@ -10,7 +10,7 @@ pipeline {
      genericVariables: [
         
         [ key: 'action',
-          value: '$.action,
+          value: '$.action',
           expressionType: "JSONPath",
           regexpFilter: ""
         ]    
