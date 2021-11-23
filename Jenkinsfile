@@ -1,28 +1,36 @@
 pipeline {
   agent any
   parameters { 
-    string(name: 'action', defaultValue: '$.action', description: '')
-    string(name: 'state', defaultValue: '$.pull_request.state', description: '')
-    string(name: 'merged', defaultValue: '$.merged_at', description: '')
+    string(name: 'action', defaultValue: 'def', description: '')
+    string(name: 'state', defaultValue: 'def', description: '')
+    string(name: 'merged', defaultValue: 'def', description: '')
      }
-  // triggers {
-  //   GenericTrigger(
-  //    genericVariables: [
-  //     [key: 'pull_request', value: '$.pull_request'],
-     
-  //    ],
-  //    causeString: 'Triggered on $ref',
-  //    token: 'abc123',
-  //    tokenCredentialId: '',
-  //    printContributedVariables: true,
-  //    printPostContent: true,
+  triggers {
+    GenericTrigger(
+     genericVariables {
+        genericVariable{
+          key("action")
+          value("\$.action")
+          expressionType("JSONPath")
+          regexpFilter("")
+        }    
+        genericVariable{
+          key("state")
+          value("\$.pull_request.state")
+          expressionType("JSONPath")
+          regexpFilter("")
+        }  
+        genericVariable{
+          key("action")
+          value("\$.merged_at")
+          expressionType("JSONPath")
+          regexpFilter("")
+        }  
+      }
+    )
+  }
 
-  //    silentResponse: false,
-  //     regexpFilterText: '$ref',
-  //     regexpFilterExpression: 'refs/heads/' + "${env.BRANCH_NAME}"
 
-  //   )
-  // }
   stages {
     stage('Some step') {
       steps {
