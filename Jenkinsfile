@@ -36,7 +36,7 @@ pipeline {
 
   stages {
     stage('Some step') {
-      when { equals expected: 'open', actual: "${params.pr_state}" }
+      when { not {equals expected: 'open', actual: "${params.pr_state}" } } 
       steps {
         echo "egine pull request sto '${env.BRANCH_NAME}'"
         // echo "${everything}"
