@@ -57,13 +57,16 @@ pipeline {
       }
     }
 
-    stage("build project"){
+    stage("build project"){ //pull request exv mono pros to main apo opoiodhpote branch. ara an exv event pull request apokleietai na einai sto main
       //when{ equals expected: 'refs/heads/'+"${env.BRANCH_NAME}", actual: "${params.ref}" }
-      when { not {branch 'main'} }
+     // when { not {branch 'main'} }
+      when { allOf { equals expected: 'pull_request', actual: "${params.x_github_event}"; 
+                     equals expected: 'opened', actual: "${params.action}" 
+                     equals expected: 'open', actual: "${params.pr_state}"
+                    } 
+            }
       steps{
-        echo 'to branch poy douleueis den einai to main'
-        echo "einai to"
-        echo "${env.BRANCH_NAME}"
+        echo "eimai apo pull request poy egine open"
       }
     }
   }
