@@ -29,7 +29,7 @@ pipeline {
           regexpFilter("")
         }  
       }
-      printContributedVariables(true)
+      
       printPostContent(true)
       silentResponse(false)
     )
