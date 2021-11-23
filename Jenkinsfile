@@ -44,7 +44,7 @@ pipeline {
         echo "egine pull request sto '${env.BRANCH_NAME}'"
         // echo "${everything}"
         echo "${params.action}"
-        echo echo "${event}"
+         echo "${event}"
             echo "${params.pr_state}"
         echo 'hiiiiiii'
         echo "gitiii"
