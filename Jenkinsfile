@@ -5,6 +5,8 @@ pipeline {
     string(name: 'pr_state', defaultValue: 'def', description: '')
     string(name: 'merged', defaultValue: 'def', description: '')
     string(name: 'x_github_event', defaultValue: 'def', description: '')
+    string(name: 'ref', defaultValue: 'def', description: '')
+
   }
   triggers {
     GenericTrigger(
@@ -52,6 +54,16 @@ pipeline {
             echo "${params.pr_state}"
         echo 'hiiiii'
         
+      }
+    }
+
+    stage("build project"){
+      //when{ equals expected: 'refs/heads/'+"${env.BRANCH_NAME}", actual: "${params.ref}" }
+      when { not {branch 'main'} }
+      steps{
+        echo 'to branch poy douleueis den einai to main'
+        echo "einai to"
+        echo "${env.BRANCH_NAME}"
       }
     }
   }
