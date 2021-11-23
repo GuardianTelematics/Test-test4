@@ -41,7 +41,7 @@ pipeline {
         // echo "${everything}"
         echo "${params.action}"
           echo "${params.state}"
-            echo "${params.merged}"
+            echo "${params.pr_state}"
         echo 'hiiiiiii'
         echo "gitiii"
       }
