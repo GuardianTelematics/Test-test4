@@ -2,13 +2,13 @@ pipeline {
   agent any
  parameters { 
     string(name: 'action', defaultValue: 'def', description: '')
-    string(name: 'pr_opened', defaultValue: 'def', description: '')
+    string(name: 'pr_state', defaultValue: 'def', description: '')
     string(name: 'merged', defaultValue: 'def', description: '')
   }
   triggers {
     GenericTrigger(
      genericVariables: [
-      [key: 'pr_opened', value: '$.pull_request.state'],
+      [key: 'pr_state', value: '$.pull_request.state'],
       [key: 'action', value: '$.action'],
 
       [
@@ -26,8 +26,8 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-     regexpFilterText: '$pr_opened',
-     //regexpFilterExpression: 'open'
+     regexpFilterText: '$pr_state',
+     regexpFilterExpression: 'open'
 
     )
   }
