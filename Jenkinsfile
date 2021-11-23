@@ -8,35 +8,27 @@ pipeline {
   triggers {
     GenericTrigger(
      genericVariables: [
-        
-        [ key: 'action',
-          value: '$.action',
-          expressionType: 'JSONPath',
-          regexpFilter: ' '
-        ]    
-        [ key: 'state',
-          value: '$.pull_request.state',
-          expressionType: 'JSONPath',
-          regexpFilter: ' '
-        ] 
-        [ key: 'action',
-          value: '$.merged_at',
-          expressionType: 'JSONPath',
-          regexpFilter: ' '
-        ]
-     ], 
+      [key: 'ref', value: '$.ref'],
+      [
+      key: 'everything',
+      value: '$',
+      expressionType: 'JSONPath', //Optional, defaults to JSONPath
+      regexpFilter: '', //Optional, defaults to empty string
+      defaultValue: '' //Optional, defaults to empty string
+     ]
+     ],
+     causeString: 'Triggered on $ref',
      token: 'abc123',
      tokenCredentialId: '',
      printContributedVariables: true,
-     printPostContent: true, 
-     silentResponse: false,
-    //  regexpFilterText: '$action',
-    //  regexpFilterExpression: 'opened'
+     printPostContent: true,
 
-     
+     silentResponse: false,
+     regexpFilterText: '$ref',
+     regexpFilterExpression: 'refs/heads/' + "${env.BRANCH_NAME}"
+
     )
   }
- 
 
 
 
