@@ -10,25 +10,24 @@ pipeline {
      genericVariables: [
       [key: 'pr_state', value: '$.pull_request.state'],
       [key: 'action', value: '$.action'],
-
       [
       key: 'everything',
       value: '$',
       expressionType: 'JSONPath', //Optional, defaults to JSONPath
       regexpFilter: '', //Optional, defaults to empty string
       defaultValue: '' //Optional, defaults to empty string
-     ]
+      ]
      ],
      causeString: 'Triggered on $pr_opened pull request',
      
      token: 'abc123',
      tokenCredentialId: '',
-    //  printContributedVariables: true,
-    //  printPostContent: true,
+     printContributedVariables: true,
+     printPostContent: true,
 
      silentResponse: false,
-     regexpFilterText: '$action',
-     regexpFilterExpression: 'opened'
+    //  regexpFilterText: '$action',
+    //  regexpFilterExpression: 'opened'
 
     )
   }
