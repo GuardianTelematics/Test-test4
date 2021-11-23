@@ -48,7 +48,7 @@ pipeline {
         echo "${params.action}"
         echo "event------"
         echo "${x_github_event}"
-        echo "event----------"
+        echo "event--------"
             echo "${params.pr_state}"
         echo 'hiiiiiii'
         echo "gitiii"
