@@ -21,7 +21,7 @@ pipeline {
      ],
      genericHeaderVariables: [
       [key: 'event', regexpFilter: '/X-GitHubEvent:(.*)/g']
-],
+      ],
      causeString: 'Triggered on $pr_opened pull request',
      
      token: 'abc123',
@@ -45,7 +45,7 @@ pipeline {
         echo "egine pull request sto '${env.BRANCH_NAME}'"
         // echo "${everything}"
         echo "${params.action}"
-         echo "${event}"
+         echo "${params.event}"
             echo "${params.pr_state}"
         echo 'hiiiiiii'
         echo "gitiii"
