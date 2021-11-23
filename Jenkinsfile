@@ -15,12 +15,12 @@ pipeline {
           regexpFilter: ""
         ]    
         [ key: "state",
-          value: "$.pull_request.state",
+          value: '$.pull_request.state',
           expressionType: "JSONPath",
           regexpFilter: ""
         ] 
         [ key: "action",
-          value: "$.merged_at",
+          value: '$.merged_at',
           expressionType: "JSONPath",
           regexpFilter: ""
         ]
