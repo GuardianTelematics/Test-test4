@@ -21,10 +21,10 @@ pipeline {
      ],
      causeString: 'Triggered on $pr_opened pull request',
      withCredentials(
-      [ string (credentialsId: 'genericWebhookToken', variable: 'TOKEN'
-      )]
+      [ string (credentialsId: 'genericWebhookToken', variable: 'TOKEN' )]
      ){ 
-     token: $TOKEN,
+     token: $TOKEN
+     },
      tokenCredentialId: '',
     //  printContributedVariables: true,
     //  printPostContent: true,
