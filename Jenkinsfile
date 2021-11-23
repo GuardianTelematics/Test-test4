@@ -1,15 +1,13 @@
 pipeline {
   agent any
-  parameters { 
+ parameters { 
     string(name: 'action', defaultValue: 'def', description: '')
     string(name: 'state', defaultValue: 'def', description: '')
     string(name: 'merged', defaultValue: 'def', description: '')
   }
-
-
   triggers {
     GenericTrigger(
-     genericVariables: 
+     genericVariables: [
         
         [ key: "action",
           value: "\$.action",
@@ -26,19 +24,20 @@ pipeline {
           expressionType: "JSONPath",
           regexpFilter: ""
         ]
-     
-        token: 'abc123',
-        tokenCredentialId: '',
-        printContributedVariables: true,
-        printPostContent: true,
-
-        silentResponse: false,
-        regexpFilterText: '$action',
-        regexpFilterExpression: 'opened"
+     ], 
+     token: 'abc123',
+     tokenCredentialId: '',
+     printContributedVariables: true,
+     printPostContent: true 
+     silentResponse: false,
+     regexpFilterText: '$action',
+     regexpFilterExpression: 'opened'
 
      
     )
   }
+ 
+
 
 
   stages {
