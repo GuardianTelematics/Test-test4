@@ -26,8 +26,8 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-     regexpFilterText: '$action',
-     regexpFilterExpression: 'opened'
+     regexpFilterText: '$pr_opened',
+     //regexpFilterExpression: 'open'
 
     )
   }
