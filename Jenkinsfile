@@ -24,7 +24,7 @@ pipeline {
       [ string (credentialsId: 'genericWebhookToken', variable: 'TOKEN'
       )]
      ){ 
-     token: TOKEN,
+     token: $TOKEN,
      tokenCredentialId: '',
     //  printContributedVariables: true,
     //  printPostContent: true,
