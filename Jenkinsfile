@@ -69,5 +69,6 @@ pipeline {
         echo "eimai apo pull request poy egine open"
         echo "${env.WORKSPACE}"    
       }
+    }
   }
 }
