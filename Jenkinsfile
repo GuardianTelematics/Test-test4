@@ -31,8 +31,8 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-     regexpFilterText: '$X-GitHub-Event',
-     regexpFilterExpression: "push" | "pull_request"
+     regexpFilterText: '$ref',
+     regexpFilterExpression: 'refs/heads/' + "${env.BRANCH_NAME}"
     )
   }
 
