@@ -30,8 +30,8 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-     regexpFilterText: '$action',
-     regexpFilterExpression: 'opened'
+     regexpFilterText: 'x_github_event',
+     regexpFilterExpression: 'push'
     )
   }
 
