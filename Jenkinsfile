@@ -9,33 +9,30 @@ pipeline {
 
   triggers {
     GenericTrigger(
-     genericVariables {
-        genericVariable{
-          key("action")
+     genericVariables: 
+        
+        [  key("action")
           value("\$.action")
           expressionType("JSONPath")
           regexpFilter("")
-        }    
-        genericVariable{
-          key("state")
+        ]    
+        [ key("state")
           value("\$.pull_request.state")
           expressionType("JSONPath")
           regexpFilter("")
-        }  
-        genericVariable{
-          key("action")
+        ] 
+        [ key("action")
           value("\$.merged_at")
           expressionType("JSONPath")
           regexpFilter("")
-        }  
-      }
+        ]
      
-     token: 'abc123',
-     tokenCredentialId: '',
-     printContributedVariables: true,
-     printPostContent: true,
-
-     silentResponse: false,
+        token: 'abc123',
+        tokenCredentialId: '',
+        printContributedVariables: true,
+        printPostContent: true,
+    
+        silentResponse: false,
      
     )
   }
