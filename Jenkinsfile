@@ -11,7 +11,7 @@ pipeline {
     GenericTrigger(
      genericVariables: 
         
-        [  key: "action",
+        [ key: "action",
           value: "\$.action",
           expressionType: "JSONPath",
           regexpFilter: ""
@@ -33,6 +33,9 @@ pipeline {
         printPostContent: true,
 
         silentResponse: false,
+        regexpFilterText: '$action',
+        regexpFilterExpression: 'opened"
+
      
     )
   }
