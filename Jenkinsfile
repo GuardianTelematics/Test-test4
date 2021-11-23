@@ -4,7 +4,9 @@ pipeline {
     string(name: 'action', defaultValue: 'def', description: '')
     string(name: 'state', defaultValue: 'def', description: '')
     string(name: 'merged', defaultValue: 'def', description: '')
-     }
+  }
+
+
   triggers {
     GenericTrigger(
      genericVariables {
@@ -27,6 +29,11 @@ pipeline {
           regexpFilter("")
         }  
       }
+      token('abc123')
+      tokenCredentialId('')
+      printContributedVariables(true)
+      printPostContent(true)
+      silentResponse(false)
     )
   }
 
