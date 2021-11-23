@@ -9,8 +9,8 @@ pipeline {
     GenericTrigger(
      genericVariables: [
         
-        [ key: "action",
-          value: "$.action",
+        [ key: 'action',
+          value: '$.action,
           expressionType: "JSONPath",
           regexpFilter: ""
         ]    
