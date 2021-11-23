@@ -20,7 +20,7 @@ pipeline {
       // ]
      ],
      genericHeaderVariables: [
-      [key: 'X_GitHub_Event', regexpFilter: '']
+      [key: 'X-GitHub-Event', regexpFilter: '']
      ],
      causeString: 'Triggered on $pr_opened pull request',
      
@@ -32,7 +32,6 @@ pipeline {
      silentResponse: false,
      regexpFilterText: '$action',
      regexpFilterExpression: 'opened'
-
     )
   }
 
@@ -47,7 +46,7 @@ pipeline {
         // echo "${everything}"
         echo "${params.action}"
         echo "event----------"
-         echo "${params.event}"
+         //echo "${params.event}"
         echo "event----------"
             echo "${params.pr_state}"
         echo 'hiiiiiii'
