@@ -4,7 +4,7 @@ pipeline {
     string(name: 'action', defaultValue: 'def', description: '')
     string(name: 'pr_state', defaultValue: 'def', description: '')
     string(name: 'merged', defaultValue: 'def', description: '')
-    string(name: 'X-GitHub-Event', defaultValue: 'def', description: '')
+    string(name: 'x_github_event', defaultValue: 'def', description: '')
   }
   triggers {
     GenericTrigger(
@@ -41,7 +41,7 @@ pipeline {
     stage('Some step') {
       //when {equals expected: 'open', actual: "${params.pr_state}" }
       steps {
-        echo "${X-GitHub-Event}"
+        echo "${x_github_event}"
         echo "egine pull request sto '${env.BRANCH_NAME}'"
         // echo "${everything}"
         echo "${params.action}"
