@@ -11,6 +11,7 @@ pipeline {
      genericVariables: [
       [key: 'pr_state', value: '$.pull_request.state'],
       [key: 'action', value: '$.action'],
+      [key: 'ref', value: '$.ref'],
       // [
       // key: 'everything',
       // value: '$',
@@ -30,8 +31,8 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-    //  regexpFilterText: '$x_github_event',
-    //  regexpFilterExpression: "push | pull_request"
+     regexpFilterText: '$x_github_event',
+     regexpFilterExpression: "push | pull_request"
     )
   }
 
