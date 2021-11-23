@@ -51,7 +51,7 @@ pipeline {
         echo "event-----"
             echo "${params.pr_state}"
         echo 'hiiiii'
-        echo "gitiii"
+        
       }
     }
   }
