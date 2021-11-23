@@ -11,16 +11,16 @@ pipeline {
      genericVariables: [
       [key: 'pr_state', value: '$.pull_request.state'],
       [key: 'action', value: '$.action'],
-      [
-      key: 'everything',
-      value: '$',
-      expressionType: 'JSONPath', //Optional, defaults to JSONPath
-      regexpFilter: '', //Optional, defaults to empty string
-      defaultValue: '' //Optional, defaults to empty string
-      ]
+      // [
+      // key: 'everything',
+      // value: '$',
+      // expressionType: 'JSONPath', //Optional, defaults to JSONPath
+      // regexpFilter: '', //Optional, defaults to empty string
+      // defaultValue: '' //Optional, defaults to empty string
+      // ]
      ],
      genericHeaderVariables: [
-      [key: 'X_GitHub_Event', value: '']
+      [key: 'X_GitHub_Event', regexpFilter: '']
      ],
      causeString: 'Triggered on $pr_opened pull request',
      
