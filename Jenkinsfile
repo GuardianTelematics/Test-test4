@@ -11,18 +11,18 @@ pipeline {
         
         [ key: 'action',
           value: '$.action',
-          expressionType: "JSONPath",
-          regexpFilter: ""
+          expressionType: 'JSONPath',
+          regexpFilter: ' '
         ]    
-        [ key: "state",
+        [ key: 'state',
           value: '$.pull_request.state',
-          expressionType: "JSONPath",
-          regexpFilter: ""
+          expressionType: 'JSONPath',
+          regexpFilter: ' '
         ] 
-        [ key: "action",
+        [ key: 'action',
           value: '$.merged_at',
-          expressionType: "JSONPath",
-          regexpFilter: ""
+          expressionType: 'JSONPath',
+          regexpFilter: ' '
         ]
      ], 
      token: 'abc123',
