@@ -22,8 +22,8 @@ pipeline {
      causeString: 'Triggered on $pr_opened pull request',
      token: 'abc123',
      tokenCredentialId: '',
-     printContributedVariables: true,
-     printPostContent: true,
+    //  printContributedVariables: true,
+    //  printPostContent: true,
 
      silentResponse: false,
      regexpFilterText: '$action',
@@ -36,7 +36,7 @@ pipeline {
 
   stages {
     stage('Some step') {
-      when { not {equals expected: 'open', actual: "${params.pr_state}" } } 
+      when {equals expected: 'open', actual: "${params.pr_state}" }
       steps {
         echo "egine pull request sto '${env.BRANCH_NAME}'"
         // echo "${everything}"
