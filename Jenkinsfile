@@ -6,7 +6,7 @@ pipeline {
     string(name: 'merged', defaultValue: 'def', description: '')
     string(name: 'x_github_event', defaultValue: 'def', description: '')
   }
-  triggers {
+ // triggers {
     GenericTrigger(
      genericVariables: [
       [key: 'pr_state', value: '$.pull_request.state'],
@@ -30,10 +30,10 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-     regexpFilterText: '$x_github_event_0',
+     regexpFilterText: '$x_github_event',
      regexpFilterExpression: "push | pull_request"
     )
-  }
+  //}
 
 
 
