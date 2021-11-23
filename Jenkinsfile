@@ -21,7 +21,7 @@ pipeline {
      ],
      causeString: 'Triggered on $pr_opened pull request',
      
-     token: 'abc123'
+     token: 'abc123',
      tokenCredentialId: '',
     //  printContributedVariables: true,
     //  printPostContent: true,
