@@ -30,7 +30,7 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-     regexpFilterText: '$x_github_event',
+     regexpFilterText: '$x_github_event_0',
      regexpFilterExpression: "push | pull_request"
     )
   }
