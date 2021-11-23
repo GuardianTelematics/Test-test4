@@ -42,7 +42,7 @@ pipeline {
     stage('Some step') {
       //when {equals expected: 'open', actual: "${params.pr_state}" }
       steps {
-        echo "${X-GitHub-Event}"
+        echo "${X_GitHub_Event}"
         echo "egine pull request sto '${env.BRANCH_NAME}'"
         // echo "${everything}"
         echo "${params.action}"
