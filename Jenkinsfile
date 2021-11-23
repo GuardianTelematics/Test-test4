@@ -30,8 +30,8 @@ pipeline {
      printPostContent: true,
 
      silentResponse: false,
-     regexpFilterText: 'x_github_event',
-     regexpFilterExpression: 'push'
+     regexpFilterText: '$x_github_event',
+     regexpFilterExpression: 'push
     )
   }
 
@@ -45,7 +45,7 @@ pipeline {
         echo "egine pull request sto '${env.BRANCH_NAME}'"
         // echo "${everything}"
         echo "${params.action}"
-        echo "event--------"
+        echo "event----------"
         echo "${x_github_event}"
         echo "event----------"
             echo "${params.pr_state}"
