@@ -29,9 +29,7 @@ pipeline {
           regexpFilter("")
         }  
       }
-      
-      printPostContent(true)
-      silentResponse(false)
+     
     )
   }
 
