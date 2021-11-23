@@ -4,7 +4,7 @@ pipeline {
     string(name: 'action', defaultValue: 'def', description: '')
     string(name: 'pr_state', defaultValue: 'def', description: '')
     string(name: 'merged', defaultValue: 'def', description: '')
-    string(name: 'event', defaultValue: 'def', description: '')
+    string(name: 'X-GitHub-Event', defaultValue: 'def', description: '')
   }
   triggers {
     GenericTrigger(
