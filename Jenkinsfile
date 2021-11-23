@@ -27,7 +27,7 @@ pipeline {
 
      silentResponse: false,
      regexpFilterText: '$action'
-     //regexpFilterExpression: 'open'
+     regexpFilterExpression: 'opened'
 
     )
   }
