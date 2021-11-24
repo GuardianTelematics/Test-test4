@@ -26,9 +26,7 @@ pipeline {
      genericHeaderVariables: [
       [key: 'X-GitHub-Event', regexpFilter: '']
      ],
-     causeString: 'Triggered on $pr_opened pull request',
-     
-     //token: 'abc123',
+     causeString: 'Triggered on pull request',
      tokenCredentialId: 'genericWebhookToken',
      printContributedVariables: true,
      //printPostContent: true,
