@@ -8,6 +8,7 @@ pipeline {
     string(name: 'ref', defaultValue: 'def', description: '')
 
   }
+  
   triggers {
     GenericTrigger(
      genericVariables: [
@@ -51,9 +52,7 @@ pipeline {
         echo "event----"
         echo "${x_github_event}"
         echo "event-----"
-            echo "${params.pr_state}"
-        
-        
+        echo "${params.pr_state}"   
       }
     }
 
