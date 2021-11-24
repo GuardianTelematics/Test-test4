@@ -50,8 +50,8 @@ pipeline {
     
     stage('test'){
       steps{
-        echo " user is ${ref} "
-        echo " branch is ${repoData} "
+        echo " user is ${user} "
+        echo " branch is ${ref} "
         echo " repo data is ${repoData} "
         echo " repo name is ${repoName} "
         echo " repo tag is ${repoTag}"
