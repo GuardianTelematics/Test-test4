@@ -53,7 +53,7 @@ pipeline {
         echo " repo name is ${repoName} "
         echo " repo tag is ${repoTag}"
         echo "parrent dir is ${parrentDir}"
-       
+        echo "${ env.JOB_NAME }"
       }
     }
 
