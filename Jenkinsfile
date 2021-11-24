@@ -28,8 +28,8 @@ pipeline {
      ],
      causeString: 'Triggered on pull request',
      tokenCredentialId: 'genericWebhookToken',
-     printContributedVariables: true,
-     printPostContent: true,
+    //  printContributedVariables: true,
+    //  printPostContent: true,
 
      silentResponse: false,
      regexpFilterText: '$x_github_event',
