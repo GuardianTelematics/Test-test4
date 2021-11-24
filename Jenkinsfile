@@ -55,9 +55,8 @@ pipeline {
     }
 
     stage("build project"){ //pull request exv mono pros to main apo opoiodhpote branch. ara an exv event pull request apokleietai na einai sto main
-      //when{ equals expected: 'refs/heads/'+"${env.BRANCH_NAME}", actual: "${params.ref}" }
      // when { not {branch 'main'} }
-      when { allOf {// equals expected: 'pull_request', actual: "${params.x_github_event}"; 
+      when { allOf { not {branch 'main'} ;
                      equals expected: 'opened', actual: "${params.action}" ;
                      equals expected: 'open', actual: "${params.pr_state}"
                     } 
