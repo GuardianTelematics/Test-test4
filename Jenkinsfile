@@ -30,7 +30,7 @@ pipeline {
      token: 'abc123',
      tokenCredentialId: '',
      printContributedVariables: true,
-     printPostContent: true,
+     //printPostContent: true,
 
      silentResponse: false,
      regexpFilterText: '$x_github_event',
