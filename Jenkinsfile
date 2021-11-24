@@ -73,5 +73,12 @@ pipeline {
       }
 
     }
+
+    stage('test main'){
+      steps{
+        when { branch 'main'}
+        echo 'eimai sto main'
+      }
+    }
   }
 }
