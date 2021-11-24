@@ -37,8 +37,6 @@ pipeline {
     )
   }
 
-
-
   stages {
     stage('Some step') {
       //when {equals expected: 'open', actual: "${params.pr_state}" }
