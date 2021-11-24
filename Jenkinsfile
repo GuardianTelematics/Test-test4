@@ -44,6 +44,9 @@ pipeline {
       
       //when {equals expected: 'open', actual: "${params.pr_state}" }
       steps {
+
+
+        
         echo "to git.branch einai ${env.GIT_BRANCH}"
         echo "to env.branch einai ${env.BRANCH_NAME}"
        echo "Staging"
