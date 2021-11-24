@@ -9,12 +9,12 @@ pipeline {
     }
 
  parameters { 
-    string(name: 'action', defaultValue: 'def', description: '')
-    string(name: 'pr_state', defaultValue: 'def', description: '')
-    string(name: 'merged', defaultValue: 'def', description: '')
-    string(name: 'x_github_event', defaultValue: 'def', description: '')
-    string(name: 'ref', defaultValue: 'def', description: '')
-    string(name: 'user', defaultValue: 'def', description: '')
+    string(name: 'action', defaultValue: 'default', description: '')
+    string(name: 'pr_state', defaultValue: 'default', description: '')
+    string(name: 'merged', defaultValue: 'default', description: '')
+    string(name: 'x_github_event', defaultValue: 'default', description: '')
+    string(name: 'ref', defaultValue: 'default', description: '')
+    string(name: 'merged', defaultValue: 'default', description: '')
   }
 
   triggers {
@@ -23,7 +23,8 @@ pipeline {
       [key: 'pr_state', value: '$.pull_request.state'],
       [key: 'action', value: '$.action'],
       [key: 'ref', value: '$.pull_request.head.ref'],
-      [key: 'user', value: '$.pull_request.user.login']
+      [key: 'user', value: '$.pull_request.user.login'],
+      [key: 'merged', value: '$.pull_request.merged'],
       // [
       // key: 'everything',
       // value: '$',
@@ -50,8 +51,9 @@ pipeline {
        
     stage('test'){
      // when { branch "${ref}" }
-     when { equals expected: "${params.ref}", actual: "${env.BRANCH_NAME}" }
+     //when { equals expected: "${params.ref}", actual: "${env.BRANCH_NAME}" }
       steps{
+        echo " merged is ${merged} "
         echo "to git.branch einai ---------${env.GIT_BRANCH}---------------"
         echo "to env.branch einai ---------------${env.BRANCH_NAME}--------------------"
         echo " user is ${user} "
