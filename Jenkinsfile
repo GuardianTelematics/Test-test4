@@ -49,8 +49,9 @@ pipeline {
   stages {
     
     stage('test'){
-      when { branch "${ref}" }
+     // when { branch "${ref}" }
       steps{
+        echo "to git.branch einai ${env.GIT_BRANCH}"
         echo "to env.branch einai ${env.BRANCH_NAME}"
         echo " user is ${user} "
         echo " branch is ${ref} "
@@ -58,6 +59,7 @@ pipeline {
         echo " repo name is ${repoName} "
         echo " repo tag is ${repoTag}"
         echo "parrent dir is ${parrentDir}"
+
         echo "${ env.JOB_NAME }"
       }
     }
