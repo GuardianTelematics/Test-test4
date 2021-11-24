@@ -51,7 +51,7 @@ pipeline {
        
     stage('test'){
      // when { branch "${ref}" }
-     //when { equals expected: "${params.ref}", actual: "${env.BRANCH_NAME}" }
+     when { equals expected: "${params.ref}", actual: "${env.BRANCH_NAME}" }
       steps{
         echo " merged is ${merged} "
         echo "to git.branch einai ---------${env.GIT_BRANCH}---------------"
