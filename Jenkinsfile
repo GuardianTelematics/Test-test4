@@ -22,7 +22,7 @@ pipeline {
      genericVariables: [
       [key: 'pr_state', value: '$.pull_request.state'],
       [key: 'action', value: '$.action'],
-      [key: 'ref', value: '$.head.ref'],
+      [key: 'ref', value: '$.head.label'],
       [key: 'user', value: '$.pull_request.user.login']
       // [
       // key: 'everything',
