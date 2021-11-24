@@ -3,8 +3,8 @@ pipeline {
 
  environment {
         repoData = "${ env.JOB_NAME }".split('/')  //[Github Org, Test-test2, main]
-        repoName = "${repoData[1]}".toLowerCase().replace ('-', '_')  //test-test2
-        repoTag = "${repoData[1]}".split('-').first().toLowerCase() //test 
+        repoName = "${repoData[0]}".toLowerCase().replace ('-', '_')  //test-test2
+        repoTag = "${repoData[0]}".split('-').first().toLowerCase() //test 
         parrentDir = "${ env.WORKSPACE }".substring(0, "${env.WORKSPACE}".indexOf("${repoData.first().replace (' ', '_')}")) // /var/lib/jenkins/workspace/
     }
 
