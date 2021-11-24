@@ -41,6 +41,7 @@ pipeline {
 
   stages {
     stage('Some step') {
+      echo "Staging"
       //when {equals expected: 'open', actual: "${params.pr_state}" }
       steps {
        
