@@ -28,7 +28,7 @@ pipeline {
      ],
      causeString: 'Triggered on pull request',
      tokenCredentialId: 'genericWebhookToken',
-     printContributedVariables: true,
+     //printContributedVariables: true,
      //printPostContent: true,
 
      silentResponse: false,
