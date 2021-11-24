@@ -49,10 +49,10 @@ pipeline {
     
     stage('test'){
       steps{
-        echo "${repoData}"
-        echo "${repoName}"
-        echo "${repoTag}"
-        echo "${parrentDir}"
+        echo " repo data is ${repoData} "
+        echo " repo name is ${repoName} "
+        echo " repo tag is ${repoTag}"
+        echo "parrent dir is ${parrentDir}"
        
       }
     }
