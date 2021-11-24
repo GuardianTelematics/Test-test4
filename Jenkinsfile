@@ -55,7 +55,7 @@ pipeline {
         echo "to git.branch einai ---------${env.GIT_BRANCH}---------------"
         echo "to env.branch einai ---------------${env.BRANCH_NAME}--------------------"
         echo " user is ${user} "
-        echo " branch is ${ref} "
+        echo " branch is -----------${ref}----------- "
         echo " repo data is ${repoData} "
         echo " repo name is ${repoName} "
         echo " repo tag is ${repoTag}"
