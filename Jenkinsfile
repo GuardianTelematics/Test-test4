@@ -75,7 +75,6 @@ pipeline {
     stage('test main'){
       when { branch 'main'}
       steps{
-               
         echo 'eimai sto main'
       }
     }
