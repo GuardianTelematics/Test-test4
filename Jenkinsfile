@@ -14,7 +14,7 @@ pipeline {
     string(name: 'merged', defaultValue: 'def', description: '')
     string(name: 'x_github_event', defaultValue: 'def', description: '')
     string(name: 'ref', defaultValue: 'def', description: '')
-
+    string(name: 'user', defaultValue: 'def', description: '')
   }
 
   triggers {
@@ -22,7 +22,8 @@ pipeline {
      genericVariables: [
       [key: 'pr_state', value: '$.pull_request.state'],
       [key: 'action', value: '$.action'],
-      [key: 'ref', value: '$.ref'],
+      [key: 'ref', value: '$.head.ref'],
+      [key: 'user', value: '$.pull_request.user.login']
       // [
       // key: 'everything',
       // value: '$',
@@ -49,6 +50,8 @@ pipeline {
     
     stage('test'){
       steps{
+        echo " user is ${ref} "
+        echo " branch is ${repoData} "
         echo " repo data is ${repoData} "
         echo " repo name is ${repoName} "
         echo " repo tag is ${repoTag}"
