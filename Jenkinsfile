@@ -1,5 +1,13 @@
 pipeline {
   agent any
+
+ environment {
+        repoData = "${ env.JOB_NAME }".split('/')  //[Github Org, Test-test2, main]
+        repoName = "${repoData[1]}".toLowerCase().replace ('-', '_')  //test-test2
+        repoTag = "${repoData[1]}".split('-').first().toLowerCase() //test 
+        parrentDir = "${ env.WORKSPACE }".substring(0, "${env.WORKSPACE}".indexOf("${repoData.first().replace (' ', '_')}")) // /var/lib/jenkins/workspace/
+    }
+
  parameters { 
     string(name: 'action', defaultValue: 'def', description: '')
     string(name: 'pr_state', defaultValue: 'def', description: '')
@@ -38,6 +46,17 @@ pipeline {
   }
 
   stages {
+    
+    stage('test'){
+      steps{
+        echo "${repoData}"
+        echo "${repoName}"
+        echo "${repoTag}"
+        echo "${parrentDir}"
+       
+      }
+    }
+
     stage('Some step') {
       //when {equals expected: 'open', actual: "${params.pr_state}" }
       steps {
@@ -72,9 +91,13 @@ pipeline {
 
     }
 
-    stage('test main'){
+    stage('deploy project'){
       when { branch 'main'}
       steps{
+        // sh(script:"docker build . -t guardian-telematics/${repoName}") //build image
+        // sh(script:"docker tag guardian-telematics/${repoName} localhost:5000/guardian-telematics/${repoName}") //create the tag
+        // sh(script:"docker push localhost:5000/guardian-telematics/${repoName}") //push to docker registry 
+        echo "${env.WORKSPACE}"
         echo 'eimai sto main'
       }
     }
