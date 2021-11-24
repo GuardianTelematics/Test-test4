@@ -49,7 +49,7 @@ pipeline {
   stages {
        
     stage('test'){
-     // when { branch "${ref}" }
+      when { branch "${params.ref}" }
       steps{
         echo "to git.branch einai ${env.GIT_BRANCH}"
         echo "to env.branch einai ${env.BRANCH_NAME}"
