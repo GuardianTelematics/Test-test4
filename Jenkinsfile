@@ -49,7 +49,9 @@ pipeline {
   stages {
     
     stage('test'){
+      when { equals expected: env.BRANCH_NAME, actual: ref }
       steps{
+        echo "to env.branch einai ${env.BRANCH_NAME}"
         echo " user is ${user} "
         echo " branch is ${ref} "
         echo " repo data is ${repoData} "
