@@ -23,7 +23,7 @@ pipeline {
       [key: 'pr_state', value: '$.pull_request.state'],
       [key: 'action', value: '$.action'],
       [key: 'ref', value: '$.pull_request.head.ref'],
-      [key: 'user', value: '$.pull_request.user.login']
+      [key: 'user', value: '$.pull_request.user.login'],
       [key: 'merged', value: '$.pull_request.merged'],
       // [
       // key: 'everything',
