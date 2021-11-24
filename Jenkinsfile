@@ -49,12 +49,13 @@ pipeline {
   stages {
        
     stage('test'){
-      //when { branch "${params.ref}" }
+     // when { branch "${ref}" }
      //when { equals expected: "${params.ref}", actual: "${env.BRANCH_NAME}" }
       steps{
         echo "to git.branch einai ---------${env.GIT_BRANCH}---------------"
         echo "to env.branch einai ---------------${env.BRANCH_NAME}--------------------"
         echo " user is ${user} "
+        echo " ref is -----------${params.ref}----------- "
         echo " branch is -----------${ref}----------- "
         echo " repo data is ${repoData} "
         echo " repo name is ${repoName} "
