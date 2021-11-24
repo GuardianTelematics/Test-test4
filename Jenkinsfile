@@ -8,7 +8,7 @@ pipeline {
     string(name: 'ref', defaultValue: 'def', description: '')
 
   }
-  
+
   triggers {
     GenericTrigger(
      genericVariables: [
@@ -28,8 +28,8 @@ pipeline {
      ],
      causeString: 'Triggered on $pr_opened pull request',
      
-     token: 'abc123',
-     tokenCredentialId: '',
+     //token: 'abc123',
+     tokenCredentialId: 'genericWebhookToken',
      printContributedVariables: true,
      //printPostContent: true,
 
