@@ -51,7 +51,7 @@ pipeline {
        
     stage('test'){
      // when { branch "${ref}" }
-     when { equals expected: "${params.ref}", actual: "${env.BRANCH_NAME}" }
+    // when { equals expected: "${params.ref}", actual: "${env.BRANCH_NAME}" }
       steps{
         echo " merged is ${merged} "
         echo "to git.branch einai ---------${env.GIT_BRANCH}---------------"
@@ -82,15 +82,15 @@ pipeline {
       }
     }
 
-    stage("build project"){ //pull request exv mono pros to main apo opoiodhpote branch. ara an exv event pull request apokleietai na einai sto main
+    stage("build && test project"){ //pull request exv mono pros to main apo opoiodhpote branch. ara an exv event pull request apokleietai na einai sto main
      // when { not {branch 'main'} }
-      when { allOf { not {branch 'main'} ;
+      when { allOf { equals expected: "${params.ref}", actual: "${env.BRANCH_NAME}" ;
                      equals expected: 'opened', actual: "${params.action}" ;
                      equals expected: 'open', actual: "${params.pr_state}"
                     } 
             }
       steps{
-        echo "eimai apo pull request poy egine open"
+        echo "kwdikas gia pr pou egine open sto branch ap to opoio hrtha"
         echo "${env.WORKSPACE}"    
       }
     }
