@@ -81,8 +81,8 @@ pipeline {
         echo "${params.pr_state}"   
       }
     }
-
-    stage("build project"){ //pull request exv mono pros to main apo opoiodhpote branch. ara an exv event pull request apokleietai na einai sto main
+ 
+    stage("build & test project"){ //pull request exv mono pros to main apo opoiodhpote branch. ara an exv event pull request apokleietai na einai sto main
      // when { not {branch 'main'} }
       when { allOf { not {branch 'main'} ;
                      equals expected: 'opened', actual: "${params.action}" ;
