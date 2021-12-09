@@ -8,6 +8,7 @@ pipeline {
         echo "hello from jenkinsfile"
         echo "hello"
       }
+      
     }
 
  }  
