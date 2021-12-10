@@ -5,8 +5,7 @@ pipeline {
 
     stage('test'){
       steps{
-        echo "hello from
-         jenkinsfile!!"
+        echo "hello from jenkinsfile!!"
         echo "hello fixjenk"
       }
 
